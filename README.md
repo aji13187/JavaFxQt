@@ -1,4 +1,7 @@
-# JavaFxToQt — Embed an ArcGIS Qt Map inside JavaFX application
+# JavaFxQt - Integrating Qt into your JavaFX apps to render the map.
+
+Now that the ArcGIS Maps SDK for Java is [deprecated](https://www.esri.com/arcgis-blog/products/sdk-java/announcements/announcing-the-deprecation-of-arcgis-maps-sdk-for-java) and retired, you may be wondering how to migrate your apps written with the ArcGIS Maps SDK for Java. 
+This workflow shows how you can keep your existing Java codebase, and swap out the map component with one implemented with the [ArcGIS Maps SDK for Qt](https://developers.arcgis.com/qt/). It also shows how to communicate between the two layers with some small examples.
 
 This repository contains two apps that work together:
 - `JavaFxApp`: a JavaFX UI that hosts a native Qt window.
