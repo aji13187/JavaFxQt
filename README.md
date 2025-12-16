@@ -7,12 +7,11 @@ This repository contains two apps that work together:
 - `JavaFxApp`: a JavaFX UI that hosts a native Qt window.
 - `QtMapApp`: a Qt 6 app using ArcGIS Maps SDK for Qt, built as a DLL and embedded into JavaFX via JNI.
 
-Execute the JavaFxApp to demonstrate embedding of the Qt Map application within JavaFx app.
-The `JavaFxApp` also features some basic interactions between the JavaFx and Qt Map applications using JNI.
-This code will work on both Windows and MacOS, Make sure to configure the JDK, JAVAFX, QT and ArcGIS SDK paths in both Qt and JavaFx IDE's based on the platform.
+Run the `JavaFxApp` to showcase how the Qt Map application can be embedded within a JavaFX application.
+The `JavaFxApp` demonstrates basic interactions between JavaFX and the Qt Map application through JNI. This code is compatible with both Windows and macOS.
+Before running, ensure that the JDK, JavaFX, Qt, and ArcGIS SDK paths are correctly configured in both the Qt and JavaFX IDEs according to your operating system.
 
 ## Prerequisites
-
 - JDK/openjdk and JavaFX/openjfx SDK latest versions.
 - ArcGIS Maps SDK for Qt.
 - Qt 6.x.x latest, Qt Creator.
@@ -22,16 +21,16 @@ This code will work on both Windows and MacOS, Make sure to configure the JDK, J
 
 ## Build QtMapApp (Qt Creator)
 1) Open `QtMapApp` in Qt Creator by using the CMakeLists.txt.
-2) Select a Kit that matches your install.
+2) Select a Kit that matches your Qt install.
 3) Modify the ArcGIS Maps SDK version in the CMakeLists.txt.
-4) Build the QtMapApp project, Note the build output directory; it must contain `QtMapApp.dll` (Windows) or `libQtMapApp.dylib` (macOS).
+4) Build the `QtMapApp` project, Note the build output directory; it must contain `QtMapApp.dll` (Windows) or `libQtMapApp.dylib` (macOS).
 
 ## Run JavaFxApp (VS Code)
 1) Open the `JavaFxApp` in Visual studio code.
 2) Ensure your JavaFX SDK, JDK, Qt6 and ArcGIS Qt SDK path is correct in the `.vscode/launch.json`.
    - Edit `.vscode/launch.json` - VM args, to adjust the paths for the `QtMapApp.dll` and openjfx installation.
    - Edit `.vscode/launch.json` - "env" - "Path", to adjust the paths for the Qt6 and ArcGIS_Maps_SDK_Qt installation.
-3) Run the JavaFX app. It loads the `QtMapApp.dll` and embeds the Qt map window inside the JavaFX stage.
+3) Run the `JavaFxApp`. It loads the `QtMapApp.dll` and embeds the Qt map window inside the JavaFX stage.
 4) Use the controls in the JavaFX app to interact with Qt Map app.
 
 ## Run JavaFxApp (IntelliJ IDEA)
