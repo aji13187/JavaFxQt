@@ -22,7 +22,7 @@ Before running, ensure that the JDK, JavaFX, Qt, and ArcGIS SDK paths are correc
 ## Build QtMapApp (Qt Creator)
 1) Open `QtMapApp` in Qt Creator by using the CMakeLists.txt.
 2) Select a Kit that matches your Qt install.
-3) Modify the ArcGIS Maps SDK version in the CMakeLists.txt.
+3) Modify the openjdk and ArcGIS Maps SDK version in the CMakeLists.txt.
 4) Build the `QtMapApp` project, Note the build output directory; it must contain `QtMapApp.dll` (Windows) or `libQtMapApp.dylib` (macOS).
 
 ## Run JavaFxApp (VS Code)
