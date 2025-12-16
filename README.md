@@ -1,25 +1,47 @@
-# JavaFxToQt - Migration options from JavaFX to Qt.<br>
+# JavaFxToQt — Embed an ArcGIS Qt Map inside JavaFX application
 
-The demo code includes two applications: JavaFxApp and QtMapApp.<br>
-These applications can be build using QtCreator for the Qt application and IntelliJ IDEA (or any Java IDE) for the JavaFx application.<br>\
-Execute the JavaFxApp to demonstrate the embedding of the Qt Map application within JavaFx.<br>
-The demo application also features some basic interactions between the JavaFx and Qt Map applications using JNI.<br>\
-This code will work on both Windows and MacOS, Make sure to configure the JDK, JAVAFX, QT and ArcGIS SDK paths in both Qt and JavaFx IDE's based on the platform.<br>
+This repository contains two apps that work together:
+- `JavaFxApp`: a JavaFX UI that hosts a native Qt window.
+- `QtMapApp`: a Qt 6 app using ArcGIS Maps SDK for Qt, built as a DLL and embedded into JavaFX via JNI.
 
-**Configuration:**
-In IntelliJ IDEA, navigate to `Run` -> `Edit Configurations` and modify the `VM options` as specified below.<br>
-If you are using Visual Studio Code as IDE, make sure to update the `launch.json` file accordingly.<br>
+Execute the JavaFxApp to demonstrate embedding of the Qt Map application within JavaFx app.
+The `JavaFxApp` also features some basic interactions between the JavaFx and Qt Map applications using JNI.
+This code will work on both Windows and MacOS, Make sure to configure the JDK, JAVAFX, QT and ArcGIS SDK paths in both Qt and JavaFx IDE's based on the platform.
+
+## Prerequisites
+
+- JDK/openjdk and JavaFX/openjfx SDK latest versions.
+- ArcGIS Maps SDK for Qt.
+- Qt 6.x.x latest, Qt Creator.
+- Visual Studio 2022 with MSVC x64 toolchain (for Qt MSVC kits) / Xcode.
+- Visual Studio Code (Java Extension Pack) or IntelliJ IDEA for JavaFX.
+- ArcGIS Maps SDK for Qt.
+
+## Build QtMapApp (Qt Creator)
+1) Open `QtMapApp` in Qt Creator by using the CMakeLists.txt.
+2) Select a Kit that matches your install.
+3) Modify the ArcGIS Maps SDK version in the CMakeLists.txt.
+4) Build the QtMapApp project, Note the build output directory; it must contain `QtMapApp.dll` (Windows) or `libQtMapApp.dylib` (macOS).
+
+## Run JavaFxApp (VS Code)
+1) Open the `JavaFxApp` in Visual studio code.
+2) Ensure your JavaFX SDK, JDK, Qt6 and ArcGIS Qt SDK path is correct in the `.vscode/launch.json`.
+   Edit `.vscode/launch.json` - VM args, to adjust the paths for the `QtMapApp.dll` and openjfx installation.
+   Edit `.vscode/launch.json` - "env" - "Path", to adjust the paths for the Qt6 and ArcGIS_Maps_SDK_Qt installation.
+3) Run the configuration. The JavaFX app loads `QtMapApp.dll` and embeds the Qt map window inside the JavaFX stage.
+4) Use the controls in the map to interact with Qt Map app.
+
+## Run JavaFxApp (IntelliJ IDEA)
+To run JavaFxApp with IntelliJ IDEA, navigate to `Run` -> `Edit Configurations` and modify the `VM options` as specified below.<br>
+Add these VM options (adjust paths):
 ```
 -Djava.security.policy=java.policy
---module-path C:\\Users\\aji13187\\Downloads\\openjfx-23.0.1\\javafx-sdk-23.0.1\\lib
+--module-path C:\tools\javafx-23.0.1\lib
 --add-modules=javafx.controls,javafx.fxml,javafx.base,javafx.graphics
 --add-opens javafx.graphics/javafx.stage=ALL-UNNAMED
 --add-opens javafx.graphics/com.sun.glass.ui=ALL-UNNAMED
 --add-exports=javafx.graphics/com.sun.javafx.tk=ALL-UNNAMED
 --add-exports javafx.graphics/com.sun.javafx.tk.quantum=ALL-UNNAMED
--Djava.library.path=C:\\applications\qt\\JavaFxToQt\\QtMapApp\\build\\Qt_6_5_6_msvc2019_64-Release;
+-Djava.library.path=C:\applications\JavaFxToQt\QtMapApp\build\Desktop_Qt_6_10_0_MSVC2022_64bit-Release
 ```
-Additionally, configure the environment variables in the same window for Qt and the ArcGIS SDK libraries.<br>
-(Path will change depending on the platform, eg: use DYLD_LIBRARY_PATH on macOS).<br>
-![image](https://devtopia.esri.com/aji13187/JavaFxToQt/assets/6964/6973f9b3-33be-4305-95e5-579e86fa914c)
 
