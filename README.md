@@ -26,10 +26,10 @@ This code will work on both Windows and MacOS, Make sure to configure the JDK, J
 ## Run JavaFxApp (VS Code)
 1) Open the `JavaFxApp` in Visual studio code.
 2) Ensure your JavaFX SDK, JDK, Qt6 and ArcGIS Qt SDK path is correct in the `.vscode/launch.json`.
-   Edit `.vscode/launch.json` - VM args, to adjust the paths for the `QtMapApp.dll` and openjfx installation.
-   Edit `.vscode/launch.json` - "env" - "Path", to adjust the paths for the Qt6 and ArcGIS_Maps_SDK_Qt installation.
-3) Run the configuration. The JavaFX app loads `QtMapApp.dll` and embeds the Qt map window inside the JavaFX stage.
-4) Use the controls in the map to interact with Qt Map app.
+   - Edit `.vscode/launch.json` - VM args, to adjust the paths for the `QtMapApp.dll` and openjfx installation.
+   - Edit `.vscode/launch.json` - "env" - "Path", to adjust the paths for the Qt6 and ArcGIS_Maps_SDK_Qt installation.
+3) Run the JavaFX app. It loads the `QtMapApp.dll` and embeds the Qt map window inside the JavaFX stage.
+4) Use the controls in the JavaFX app to interact with Qt Map app.
 
 ## Run JavaFxApp (IntelliJ IDEA)
 To run JavaFxApp with IntelliJ IDEA, navigate to `Run` -> `Edit Configurations` and modify the `VM options` as specified below.<br>
