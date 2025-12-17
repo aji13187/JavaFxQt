@@ -47,7 +47,7 @@ endif()
 if(ANDROID OR IOS)
   find_package(Qt6 COMPONENTS REQUIRED Bluetooth)
 endif()
-find_package(ArcGISRuntime 300.0.0 COMPONENTS REQUIRED Cpp)
+find_package(ArcGISRuntime 200.8.0 COMPONENTS REQUIRED Cpp)
 
 set(SOURCE_FILES
   QtMapApp.cpp
