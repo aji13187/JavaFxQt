@@ -8,7 +8,7 @@
       "mainClass": "com.example.javafxqt.HelloApplication",
       "projectName": "JavaFxApp",
       "env": {
-        "Path": "${env:Path};C:\\Qt\\Qt6.10.0\\6.10.0\\msvc2022_64\\bin;C:\\ArcGIS_Maps_SDK_Qt_windows_300.0.0\\ArcGIS_Maps_SDK_Qt_300.0.0\\qt300.0.0\\sdk\\windows\\x64\\bin"
+        "Path": "${env:Path};C:\\Qt\\Qt6.10.0\\6.10.0\\msvc2022_64\\bin;C:\\ArcGIS_Maps_SDK_Qt_windows_200.8.0\\ArcGIS_Maps_SDK_Qt_200.8.0\\qt200.8.0\\sdk\\windows\\x64\\bin"
       },
       "vmArgs": [
         "--module-path",
