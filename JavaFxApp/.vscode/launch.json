@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "HelloApplication",
+      "request": "launch",
+      "mainClass": "com.example.javafxqt.HelloApplication",
+      "projectName": "JavaFxApp",
+      "env": {
+        "Path": "${env:Path};C:\\Qt\\Qt6.10.0\\6.10.0\\msvc2022_64\\bin;C:\\ArcGIS_Maps_SDK_Qt_windows_300.0.0\\ArcGIS_Maps_SDK_Qt_300.0.0\\qt300.0.0\\sdk\\windows\\x64\\bin"
+      },
+      "vmArgs": [
+        "--module-path",
+        "${env:USERPROFILE}\\Downloads\\openjfx-23.0.1\\javafx-sdk-23.0.1\\lib",
+        "-Djava.library.path=..\\QtMapApp\\build\\Desktop_Qt_6_10_0_MSVC2022_64bit-Release",
+        "--add-modules",
+        "javafx.controls,javafx.fxml,javafx.graphics,javafx.base",
+        "--add-opens",
+        "javafx.graphics/javafx.stage=ALL-UNNAMED",
+        "--add-opens",
+        "javafx.graphics/com.sun.glass.ui=ALL-UNNAMED",
+        "--add-exports",
+        "javafx.graphics/com.sun.javafx.tk=ALL-UNNAMED",
+        "--add-exports",
+        "javafx.graphics/com.sun.javafx.tk.quantum=ALL-UNNAMED"
+      ]
+    }
+  ]
+}
