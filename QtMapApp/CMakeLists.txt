@@ -23,7 +23,7 @@ if(WIN32)
   include_directories("$ENV{USERPROFILE}/Downloads/openjdk-25.0.1/jdk-25.0.1/include")
   include_directories("$ENV{USERPROFILE}/Downloads/openjdk-25.0.1/jdk-25.0.1/include/win32")
 elseif(APPLE)
-  include_directories("/opt/homebrew/Cellar/openjdk/23.0.1/include")
+  include_directories("/opt/homebrew/Cellar/openjdk/25.0.1/include")
 endif()
 
 set(CMAKE_AUTOUIC OFF)

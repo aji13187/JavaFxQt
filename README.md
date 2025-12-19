@@ -15,14 +15,18 @@ Before running, ensure that the JDK, JavaFX, Qt, and ArcGIS SDK paths are correc
 - JDK/openjdk and JavaFX/openjfx SDK latest versions.
 - ArcGIS Maps SDK for Qt 200.8.0.
 - Qt 6.x.x latest, Qt Creator.
-- Visual Studio 2022 with MSVC x64 toolchain (for Qt MSVC kits) / Xcode for MacOS.
+- Visual Studio 2022 with MSVC x64 toolchain (for Qt MSVC kits) / Xcode for macOS.
 - Visual Studio Code (Java Extension Pack) or IntelliJ IDEA for JavaFX.
 
 ## Build QtMapApp (Qt Creator)
-1) Open `QtMapApp` in Qt Creator by using the `CMakeLists.txt`.
-2) Select a Kit that matches your Qt install.
-3) Modify the openjdk and ArcGIS Maps SDK version in the `CMakeLists.txt`.
-4) Build the `QtMapApp` project, Note the build output directory; it must contain `QtMapApp.dll` (Windows) or `libQtMapApp.dylib` (macOS).
+1) Install Qt and ArcGIS Runtime SDK for Qt.
+   - If this is your first time setting up Qt, follow the installation guide: https://developers.arcgis.com/qt/get-started/
+2) Open `QtMapApp` in Qt Creator using the project [QtMapApp/CMakeLists.txt](QtMapApp/CMakeLists.txt).
+3) Select a Kit that matches your Qt install.
+4) Modify the openjdk installation [path](QtMapApp/CMakeLists.txt#L23-L24) and ArcGIS Maps SDK for Qt [version](QtMapApp/CMakeLists.txt#L50) in the [`CMakeLists.txt`](QtMapApp/CMakeLists.txt).
+5) Set an API key in [QtMapApp.cpp](QtMapApp/QtMapApp.cpp#L71).
+   - To create an API key visit - https://developers.arcgis.com/documentation/security-and-authentication/api-key-authentication/tutorials/create-an-api-key/
+6) Build the `QtMapApp` project, Note the build output directory; it must contain `QtMapApp.dll` (Windows) or `libQtMapApp.dylib` (macOS).
 
 ## Run JavaFxApp (VS Code)
 1) Open the `JavaFxApp` in Visual studio code.
