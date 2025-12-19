@@ -68,6 +68,7 @@
                     <launcher>JavaFxApp</launcher>
                     <jlinkZip>false</jlinkZip>
                     <stripExecutables>false</stripExecutables>
+                    <jvmArgs>--enable-native-access=ALL-UNNAMED,javafx.graphics</jvmArgs>
                 </configuration>
             </plugin>
          </plugins>
