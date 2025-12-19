@@ -31,6 +31,14 @@ Before running, ensure that the JDK, JavaFX, Qt, and ArcGIS SDK paths are correc
    - Edit `.vscode/launch.json` - "env" - "Path", to adjust the paths for the Qt6 and ArcGIS_Maps_SDK_Qt installation.
 3) Run the `JavaFxApp`. It loads the `QtMapApp.dll` and embeds the Qt map window inside the JavaFX stage.
 4) Use the controls in the JavaFX app to interact with Qt Map app.
+5) To set up the Java runtime in VS Code, follow below steps.
+   - Go to the Explorer pane on the left.
+   - Expand JAVA PROJECTS.
+   - Click the three dots (...) menu.
+   - Select Configure Java Runtime.
+   - In the Project Settings page, go to the JDK Runtime tab.
+   - From the dropdown, choose JavaSE-25 or your JRE version.
+   - Click Apply to save the settings.
    
 Note: The application is currently configured for Windows. To run it on macOS, update the `.vscode/launch.json` for JDK, Qt, MapsSDK, and QtMapApp library paths to use the macOS directory format. 
 
